@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Prueba AR</title>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="js/moons.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Cargar los assets -->
+      <a-assets>
+        <img id="sky" src="assets/texturas/sky.jpeg" />
+        <img id="meteor" src="assets/texturas/meteor.jpeg" />
+      
+        <a-asset-item id="globo-obj" src="assets/objetos/balloon2.obj"></a-asset-item>
+        <a-asset-item id="globo-mtl" src="assets/texturas/balloon2.mtl"></a-asset-item>
+      </a-assets>
+      <!-- end: Cargar los assets -->
+
+      <a-sky src="#sky"></a-sky>
+
+      <!-- <a-obj-model src="#globo-obj" material="color: greenyellow" position="0 0 -5"></a-obj-model> -->
+
+      <a-entity
+        class="orbit"
+        position="0 0 0"
+        rotation="0 0 0"
+        animation="property: rotation; dur: 40000; to: 0 360 360; easing: linear; loop: true"
+      ></a-entity>
+      <a-entity
+        class="orbit"
+        position="0 0 0"
+        rotation="0 0 -45"
+        animation="property: rotation; dur: 30000; to: 0 -360 0; easing: linear; loop: true"
+      ></a-entity>
+      <a-entity
+        class="orbit"
+        position="0 0 0"
+        rotation="0 0 -90"
+        animation="property: rotation; dur: 20000; to: 0 360 360; easing: linear; loop: true"
+      ></a-entity>
+      <a-entity
+        class="orbit"
+        position="0 0 0"
+        rotation="0 0 -120"
+        animation="property: rotation; dur: 50000; to: 360 -360 0; easing: linear; loop: true"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
